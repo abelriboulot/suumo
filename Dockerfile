@@ -8,7 +8,7 @@ RUN \
   apt-get -y upgrade && \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
-  apt-get install -y byobu curl git htop man unzip vim wget npm && \
+  apt-get install -y byobu curl git htop man unzip vim wget nodejs npm && \
   rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
