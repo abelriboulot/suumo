@@ -8,7 +8,7 @@ RUN \
   apt-get -y upgrade && \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
-  apt-get install -y byobu curl git htop man unzip vim wget nodejs npm && \
+  apt-get install -y byobu curl git htop man unzip vim wget nodejs-legacy npm && \
   npm -v && \
   rm -rf /var/lib/apt/lists/*
 
