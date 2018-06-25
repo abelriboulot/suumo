@@ -13,13 +13,11 @@ RUN \
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY . .
 
 RUN \
   npm config set strict-ssl false && \
   npm install
-
-COPY . .
 
 EXPOSE 8080
 
