@@ -10,6 +10,7 @@ RUN \
   apt-get install -y software-properties-common && \
   apt-get install -y byobu curl git htop man unzip vim wget && \
   rm -rf /var/lib/apt/lists/*
+  npm install
 
 # Set environment variables.
 ENV HOME /root
@@ -18,4 +19,4 @@ ENV HOME /root
 WORKDIR /root
 
 # Define default command.
-CMD ["bash"]
+CMD ["npm", "start"]
