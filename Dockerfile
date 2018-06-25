@@ -1,26 +1,18 @@
-# Pull base image.
-FROM ubuntu:16.04
+# base image
+FROM node:9.6.1
 
-# Install.
-RUN \
-  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
-  apt-get update && \
-  apt-get -y upgrade && \
-  apt-get install -y build-essential && \
-  apt-get install -y software-properties-common && \
-  apt-get install -y byobu curl git htop man unzip vim wget nodejs-legacy npm && \
-  npm -v && \
-  rm -rf /var/lib/apt/lists/*
-
+# set working directory
+RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 
+# add `/usr/src/app/node_modules/.bin` to $PATH
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
+# install and cache app dependencies
+COPY package.json /usr/src/app/package.json
+RUN npm install
+
 COPY . .
-
-RUN \
-  npm config set strict-ssl false && \
-  npm install
-
-EXPOSE 8080
-
-# Define default command.
+EXPOSE 3000
+# start app
 CMD ["npm", "start"]
