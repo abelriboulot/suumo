@@ -12,7 +12,7 @@ const MAPBOX_TOKEN = "pk.eyJ1IjoiYWJlbGgiLCJhIjoiY2pid2JibThoMjdhdjJxcjBiOGNuZnc
 
 // Source data CSV
 const DATA_URL =
-  'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv'; // eslint-disable-line
+  'https://raw.githubusercontent.com/abelriboulot/kta/master/apartments.csv'; // eslint-disable-line
 
 class App extends Component {
   constructor(props) {
